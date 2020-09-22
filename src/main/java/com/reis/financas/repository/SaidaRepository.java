@@ -14,6 +14,6 @@ import com.reis.financas.domain.Usuario;
 public interface SaidaRepository extends JpaRepository<Saida, Long>{
 	List<Saida> findByCategoriaSaida(CategoriaSaida categoria);
 	List<Saida> findByUsuario(Usuario usuario);
-	@Query(value = "from Saida t where dataVencimento BETWEEN :startDate AND :endDate")
+	@Query(value = "from Saida t where t.dataVencimento BETWEEN :startDate AND :endDate order by t.dataVencimento")
 	List<Saida> getAllBetweenDates(@Param("startDate")Date startDate,@Param("endDate")Date endDate);
 }

@@ -16,6 +16,6 @@ public interface EntradaRepository extends JpaRepository<Entrada, Long>{
 
 	List<Entrada> findByTipoEntrada(TipoEntrada tipo);
 	List<Entrada> findByUsuario(Usuario usuario);
-	@Query(value = "from Entrada t where data BETWEEN :startDate AND :endDate")
+	@Query(value = "from Entrada t where t.data BETWEEN :startDate AND :endDate order by t.data")
 	List<Entrada> getAllBetweenDates(@Param("startDate")Date startDate,@Param("endDate")Date endDate);
 }
