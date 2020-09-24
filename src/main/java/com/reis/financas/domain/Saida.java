@@ -40,7 +40,6 @@ public class Saida implements Serializable{
 	private Usuario usuario;
 	@Enumerated(EnumType.STRING)
 	private StatusEnum status;
-//	@Column(name = "vr", columnDefinition="boolean")
 	@Column(name = "vr", nullable = false,columnDefinition = "boolean default false")
 	private boolean vr;
 	
