@@ -1,25 +1,20 @@
-package com.reis.financas.domain;
+package com.oto.despachante.domain.dto;
 
-import java.io.Serializable;
+import org.modelmapper.ModelMapper;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.oto.despachante.domain.Usuario;
 
-import com.sun.istack.NotNull;
-@Entity
-public class Usuario implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@NotNull
+public class UsuarioDTO {
 	private Long id;
 	private String nome;
-	private String login;
 	private String senha;
-	private String email;
+	private String login;
 	
+	public static UsuarioDTO create(Usuario usuario) {
+		ModelMapper modelMapper = new ModelMapper();
+		return modelMapper.map(usuario, UsuarioDTO.class);
+		
+	}
 	public Long getId() {
 		return id;
 	}
@@ -32,23 +27,17 @@ public class Usuario implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getLogin() {
-		return login;
-	}
-	public void setLogin(String login) {
-		this.login = login;
-	}
 	public String getSenha() {
 		return senha;
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getEmail() {
-		return email;
+	public String getLogin() {
+		return login;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 	@Override
 	public int hashCode() {
@@ -65,7 +54,7 @@ public class Usuario implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Usuario other = (Usuario) obj;
+		UsuarioDTO other = (UsuarioDTO) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -73,6 +62,5 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
-	
 	
 }

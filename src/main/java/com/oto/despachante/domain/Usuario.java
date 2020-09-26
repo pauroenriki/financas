@@ -1,4 +1,4 @@
-package com.reis.financas.domain;
+package com.oto.despachante.domain;
 
 import java.io.Serializable;
 
@@ -7,30 +7,40 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.sun.istack.NotNull;
 @Entity
-public class CategoriaSaida implements Serializable{
+public class Usuario implements Serializable{
+
+	
 	private static final long serialVersionUID = 1L;
+    
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@NotNull
 	private Long id;
-	private String descricao;
+	private String nome;
+	private String senha;
+	private String login;
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getDescricao() {
-		return descricao;
+	public String getNome() {
+		return nome;
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
-	@Override
-	public String toString() {
-		return this.id + " - " + this.descricao;
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
 	}
 	@Override
 	public int hashCode() {
@@ -47,7 +57,7 @@ public class CategoriaSaida implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CategoriaSaida other = (CategoriaSaida) obj;
+		Usuario other = (Usuario) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

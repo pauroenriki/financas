@@ -1,4 +1,4 @@
-package com.reis.financas.api;
+package com.oto.despachante.api;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,15 +26,15 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.ant("/financas/api/**"))
+                .paths(PathSelectors.ant("/despachante/api/**"))
                 .build()
                 .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .contact(new Contact("Paulo Reis", "", ""))
-                .title("Finanças")
+                .contact(new Contact("Oto MArques", "", ""))
+                .title("Despachante")
                 .description("Documentação API Finanças")
                 .version("1.0")
                 .build();
