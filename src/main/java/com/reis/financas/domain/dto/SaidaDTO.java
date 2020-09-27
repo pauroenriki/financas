@@ -5,6 +5,7 @@ import java.util.Date;
 import org.modelmapper.ModelMapper;
 
 import com.reis.financas.domain.CategoriaSaida;
+import com.reis.financas.domain.FormaPagamento;
 import com.reis.financas.domain.Saida;
 import com.reis.financas.domain.StatusEnum;
 import com.reis.financas.domain.Usuario;
@@ -20,27 +21,29 @@ public class SaidaDTO {
 	private StatusEnum status;
 	private CategoriaSaida categoriaSaida;
 	private Usuario usuario;
-	
+	private FormaPagamento formaPagamento;
+
 	public static SaidaDTO create(Saida saida) {
 		ModelMapper mp = new ModelMapper();
 		return mp.map(saida, SaidaDTO.class);
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public Date getData() {
 		return data;
 	}
+
 	public void setData(Date data) {
 		this.data = data;
 	}
 
-	
-	
 	public String getDescricao() {
 		return descricao;
 	}
@@ -68,12 +71,11 @@ public class SaidaDTO {
 	public Double getValor() {
 		return valor;
 	}
-	
+
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
-	
-	
+
 	public boolean isVr() {
 		return vr;
 	}
@@ -85,7 +87,7 @@ public class SaidaDTO {
 	public Date getDataVencimento() {
 		return dataVencimento;
 	}
-	
+
 	public void setDataVencimento(Date dataVencimento) {
 		this.dataVencimento = dataVencimento;
 	}
@@ -97,5 +99,13 @@ public class SaidaDTO {
 	public void setStatus(StatusEnum status) {
 		this.status = status;
 	}
-	
+
+	public FormaPagamento getFormaPagamento() {
+		return formaPagamento;
+	}
+
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		this.formaPagamento = formaPagamento;
+	}
+
 }
