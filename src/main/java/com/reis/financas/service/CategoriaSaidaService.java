@@ -58,7 +58,6 @@ public class CategoriaSaidaService {
 		if(optional.isPresent()) {
 			CategoriaSaida db = optional.get();
 			db.setDescricao(categoriaSaida.getDescricao());
-			db.setHabilitaVr(categoriaSaida.isHabilitaVr());
 			rep.save(db);
 			
 			return CategoriaSaidaDTO.create(db);

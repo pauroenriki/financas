@@ -18,8 +18,6 @@ public class CategoriaSaida implements Serializable {
 	@NotNull
 	private Long id;
 	private String descricao;
-	@Column(name = "vr", nullable = false, columnDefinition = "boolean default false")
-	private boolean habilitaVr;
 
 	public Long getId() {
 		return id;
@@ -35,14 +33,6 @@ public class CategoriaSaida implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public boolean isHabilitaVr() {
-		return habilitaVr;
-	}
-
-	public void setHabilitaVr(boolean habilitaVr) {
-		this.habilitaVr = habilitaVr;
 	}
 
 	@Override
