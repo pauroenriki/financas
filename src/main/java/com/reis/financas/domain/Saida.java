@@ -41,8 +41,6 @@ public class Saida implements Serializable {
 	private Usuario usuario;
 	@Enumerated(EnumType.STRING)
 	private StatusEnum status;
-	@Column(name = "vr", nullable = false, columnDefinition = "boolean default false")
-	private boolean vr;
 	@ManyToOne
 	@JoinColumn(name = "idFormaPagamento")
 	private FormaPagamento formaPagamento;
@@ -85,14 +83,6 @@ public class Saida implements Serializable {
 
 	public void setValor(Double valor) {
 		this.valor = valor;
-	}
-
-	public boolean isVr() {
-		return vr;
-	}
-
-	public void setVr(boolean vr) {
-		this.vr = vr;
 	}
 
 	public StatusEnum getStatus() {

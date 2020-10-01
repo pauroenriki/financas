@@ -77,7 +77,6 @@ public class SaidaService {
 			db.setValor(saida.getValor());
 			db.setStatus(saida.getStatus());
 			db.setDescricao(saida.getDescricao());
-			db.setVr(saida.isVr());
 			db.setDataVencimento(saida.getDataVencimento());
 			db.setFormaPagamento(saida.getFormaPagamento());
 			rep.save(db);

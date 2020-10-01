@@ -16,7 +16,6 @@ public class SaidaDTO {
 	private Date data;
 	private String descricao;
 	private Double valor;
-	private boolean vr;
 	private Date dataVencimento;
 	private StatusEnum status;
 	private CategoriaSaida categoriaSaida;
@@ -76,13 +75,6 @@ public class SaidaDTO {
 		this.valor = valor;
 	}
 
-	public boolean isVr() {
-		return vr;
-	}
-
-	public void setVr(boolean vr) {
-		this.vr = vr;
-	}
 
 	public Date getDataVencimento() {
 		return dataVencimento;
